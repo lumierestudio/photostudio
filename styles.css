@@ -500,9 +500,147 @@ footer {
   .nav a {
     color: #333;
     text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
   }
 
+.calendar {
+    max-width: 800px; /* adjust the width to your liking */
+    margin: 40px auto; /* add space on all sides */
+    padding: 10px; /* add some padding to the calendar container */
+    background-color: #3a3230; /* add a background color to the calendar container */
+    border: 1px solid #ddd; /* add a border to the calendar container */
+    border-radius: 10px; /* add a rounded corner to the calendar container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* add a shadow to the calendar container */
+}
+  
+  /* Month header */
+  .month {
+  padding: 20px 25px;
+  width: 100%;
+  display: flex;
+  flex-direction: row; /* Align elements horizontally */
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin-top: 20px; /* Adjust the margin top to fix the spacing */
+  text-align: left;
+}
+  
+  /* Month list */
+  .month ul {
+   margin: 0;
+   padding: 0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 
+}
+  
+  .month ul li {
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: bold;
+    padding: 0 10px; /* Adjust space between month and year */
+  }
+  
+  /* Previous button inside month header */
+  .month .prev,
+  .month .next {
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2; /* Ensure buttons are on top */
+  }
+  
+  /* Previous button inside month header */
+  .month .prev {
+    left: 10px;
+  }
+  
+  /* Next button */
+  .month .next {
+    right: 10px;
+  }
+  
+  /* Weekdays (Mon-Sun) */
+  .weekdays {
+    margin: 0;
+    padding: 10px 0;
+    background-color: #6c5d5a;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+  }
+  
+  .weekdays li {
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  
+  /* Days (1-31) */
+  .days {
+    padding: 10px 0;
+    background: #fff; /* Set the background of the days part */
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 columns for each weekday */
+    gap: 5px;
+    height: 270px; /* Set fixed height for the days container */
+    overflow-y: auto;
+  }
+  
+  /* Days styling */
+  .days li {
+    text-align: center;
+    margin-bottom: 5px;
+    font-size: 12px;
+    color: #777;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  /* Empty cells (for aligning days correctly) */
+  .days li.empty {
+    background-color: #f0f0f0;
+    border: none;
+  }
+  
+  /* Highlight the "current" day */
+  .days li .active {
+    background: #3a3230;
+    color: white !important;
+    border-radius: 50%;
+    font-weight: bold;
+  }
+  
+  /* Styling for hovered day */
+  .days li:hover {
+    background-color: #ddd;
+  }
+  
+  /* Optional: Style for the month and navigation buttons */
+  .month .prev,
+  .month .next {
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+  }  
+  
 
   /* Show the navigation menu on mobile when the burger menu icon is clicked */
   @media (max-width: 768px) {
