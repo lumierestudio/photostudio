@@ -432,6 +432,7 @@ footer {
 .contact a:hover {
     text-decoration: underline;
 }
+
 /* Style the burger menu icon */
 .burger-menu-icon {
     display: block;
