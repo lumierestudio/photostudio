@@ -1,0 +1,827 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+  }
+
+body {
+    background-color: #f6f3ee;
+    color: #3a3230;
+    font-size: 13px;
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box;
+    display: flex; /* Устанавливаем flexbox */
+    flex-direction: column; /* Элементы будут выстраиваться по вертикали */
+    min-height: 100vh; /* Занимаем всю высоту экрана */  
+    overflow-x: hidden;
+    font-family: "Montserrat", sans-serif;
+}
+
+.main-container {
+    flex: 1; /* Заставляем контейнер растягиваться, чтобы футер оставался внизу */
+    overflow-x: hidden; 
+}
+
+main {
+    margin-top: 80px;
+}
+
+header, main, footer {
+    width: 100%;
+    overflow-x: hidden; /* Запрещает горизонтальную прокрутку */
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f6f3ee;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+nav {
+    flex-grow: 1; /* Меню растягивается */
+    display: flex;
+     justify-content: flex-end; /* Центрируем ссылки */
+    margin-left: auto; /* Add this line */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #3a3230;
+    font-size: 16px;
+    padding: 10px 15px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #eae0d5;
+    border-radius: 0px;
+}
+.cta-container {
+    text-align: center; /* center the button horizontally */
+  }
+  
+  .cta-button {
+    background-color:#302927; /* brown background color */
+    color: #ffffff !important; /* white text color */
+    padding: 10px 20px; /* add some padding to make the button larger */
+    border: none; /* remove the default border */
+    cursor: pointer; /* change the cursor to a pointing hand on hover */
+    text-decoration: none; /* remove the default underline */
+  }
+  
+  .cta-button:hover {
+    background-color: #675a57; /* lighter brown on hover */
+    color: #ffffff; /* white text color */
+  }
+
+.logo img {
+    width: 200px;  
+    height: auto;
+    object-fit: contain;
+}
+
+.studio-image {
+    width: 100%;
+    max-width: 1300px;
+    height: 500px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.about-studio {
+    margin: 0;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+}
+
+.about-studio h2 {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 50px;
+    font-style: normal;
+}
+
+.about-studio p {
+    font-size: 13px;
+    padding-right: 40%;
+}
+
+
+#portfolio-page h1 {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 50px;
+    font-style: normal;
+    padding-top: 100px;
+}
+
+
+.portfolio {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 колонки одинаковой ширины */
+    gap: 20px; /* Отступы между картинками */
+    justify-items: center; /* Центрируем картинки внутри каждой колонки */
+    margin-top: 50px;
+    margin-bottom: 100px;
+    padding-left: 50px; /* Отступ слева */
+    padding-right: 50px;
+    width: 100%; /* Ширина контейнера */
+    max-width: 100%; /* Максимальная ширина 100% от родителя */
+    box-sizing: border-box; /* Включает padding в ширину */
+}
+
+.portfolio-item {
+    width: 100%; /* Каждое изображение растягивается по ширине колонки */
+    height: 100%; /* Растягиваем элементы по высоте */
+}
+
+.portfolio-item img {
+    width: 100%; /* Изображение растягивается по ширине родителя */
+    height: 100%; /* Высота изображения также 100% */
+    object-fit: cover; /* Сохранение пропорций изображения */
+}
+#portfolio-page h1,
+#portfolio-page p {
+    padding-left: 50px;
+} 
+
+.photo-image {
+    width: 100%;
+    max-width: 1300px;
+    height: 500px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    padding-top: 100px;
+}  
+
+.services-page {
+    overflow-x: hidden;
+}
+
+.center-img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    margin-bottom: 20px; 
+}
+
+.services-page p {
+    padding-left: 40px;
+    padding-right: 30%;
+    font-size: 13px;
+}
+
+.services-page h1 {
+    margin-top: 100px;  /* Добавляем отступ сверху для заголовка только на странице services */
+    padding-bottom: 0px;
+    padding-left: 40px;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 60px;
+    font-style: normal;
+    text-align: left; /* Центрируем заголовок */
+}
+/* Контейнер для всех тарифов */
+.pricing-container {
+    display: flex;                   /* Используем Flexbox для горизонтального расположения */
+    justify-content: space-between;  /* Равномерно распределяем тарифы по всей ширине */
+    flex-wrap: wrap;                 /* Позволяет элементам переноситься на новые строки на маленьких экранах */
+    gap: 10px;                       /* Добавляем отступы между элементами */
+    max-width: 1300px;               /* Максимальная ширина контейнера */
+    margin: 0 auto;                  /* Центрирование контейнера по экрану */
+    margin-bottom: 30px;
+}
+
+/* Стиль для каждого тарифа */
+.pricing-plan {
+    width: 23%;                     /* Ширина каждого тарифа, чтобы вмещались 4 колонки */
+    background-color: transparent;  /* Убираем фон */
+    padding: 30px 30px;              /* Увеличиваем отступы внутри тарифа */
+    text-align: left;                /* Выровнять текст по левой стороне */
+    border-left: none;     /* Легкая линия слева для разделения */
+    border-right: 2px solid #ddd;    /* Легкая линия справа для разделения */
+    box-sizing: border-box;          /* Учитывает паддинги и границы в ширине */
+}
+
+/* Убираем линию сверху и снизу */
+.pricing-plan:not(:first-child) {
+    border-top: none;
+}
+
+.pricing-plan:not(:last-child) {
+    border-bottom: none;
+    
+}
+
+/* Стиль для заголовков тарифов */
+.pricing-plan h2 {
+    font-size: 1.4rem;               /* Увеличиваем размер шрифта */
+    margin-bottom: 30px;              /* Добавляем отступ между заголовком и текстом */
+}
+
+/* Стиль для списка внутри тарифов */
+.pricing-plan ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.7rem;                /* Уменьшаем шрифт для списка */
+}
+
+.pricing-plan ul li {
+    margin-bottom: 5px;               /* Отступ снизу для каждого пункта списка */
+}
+
+/* Стиль для цены */
+.price {
+    font-size: 30px;                /* Увеличиваем размер шрифта для цены */
+    color: #3a3230;
+    font-weight: bold;
+    margin: 30px 0;                   /* Добавляем отступ сверху и снизу */
+}
+
+/* Стиль для кнопки */
+.choose-plan {
+    background-color: #3a3230;           /* Цвет фона кнопки */
+    color: white;                     /* Цвет текста на кнопке */
+    border: none;                     /* Убираем границу */
+    padding: 10px 15px;               /* Отступы внутри кнопки */
+    font-size: 1rem;                  /* Размер шрифта */
+    font-weight: bold;
+    cursor: pointer;                 /* Курсор как указатель */
+    margin-top: 20px;                 /* Отступ сверху от цены */
+    width: 100%;                      /* Кнопка занимает всю ширину контейнера */
+    text-align: center;               /* Выравнивание текста внутри кнопки */
+}
+
+/* Разделительная линия (горизонтальная) */
+.divider {
+    width: 100%;                      /* Линия растягивается на всю ширину контейнера */
+    border: 0;
+    border-top: 1px solid #ddd;       /* Легкая линия для разделения */
+    margin: 20px 0;                   /* Отступы сверху и снизу */
+}
+
+/* Подгоняем кнопки в контейнере */
+.pricing-plan .choose-plan {
+    align-self: flex-end;             /* Выравниваем кнопку по низу контейнера */
+    margin-top: auto;                 /* Убираем лишние отступы */
+}
+
+.contact-form-container {
+    display: flex;
+    justify-content: center;  /* Центрируем форму по горизонтали */
+    align-items: center;      /* Центрируем форму по вертикали */
+    height: 100vh;            /* Контейнер занимает всю высоту экрана */
+    padding: 100px 60px;      /* Боковые отступы */
+    margin-top: 20px;         
+    box-sizing: border-box;   /* Учитываем отступы в общей ширине */
+}
+
+.contact-form {
+    max-width: 100%;
+    width: 60%;              /* Убираем фиксированную ширину, форма будет гибкой */
+    margin: 0;                /* Убираем margin, чтобы центрировать без отступов */
+    padding: 40px;            /* Паддинг вокруг формы */
+    background-color: transparent;
+    border-radius: 8px;
+    box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;   /* Включаем отступы в ширину */
+}
+
+/* Установка отступов для всех полей формы */
+.contact-form .form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Увеличиваем интервал между полями */
+}
+
+/* Оформление меток */
+.contact-form label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #3a3230;
+}
+
+/* Оформление полей ввода */
+.contact-form input[type="text"], 
+.contact-form textarea {
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box; /* Включаем отступы в ширину */
+}
+
+/* Стили для textarea */
+.contact-form textarea {
+    resize: vertical;
+}
+
+/* Стили для кнопки отправки */
+.contact-form input[type="submit"] {
+    background-color: #3a3230;
+    color: #f6f3ee;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 0px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 100%; /* Ширина кнопки на всю форму */
+    max-width: 200px; /* Ограничиваем максимальную ширину кнопки */
+    align-self: center; /* Центрируем кнопку */
+}
+
+/* Эффект при наведении на кнопку */
+.contact-form input[type="submit"]:hover {
+    background-color: #67625c;
+    transform: scale(1.05);
+}
+
+/* Эффект при нажатии на кнопку */
+.contact-form input[type="submit"]:active {
+    background-color: #c7bfb2;
+    transform: scale(1);
+}
+
+/* Дополнительные стили для полей формы */
+.contact-form input[type="text"]:focus, 
+.contact-form textarea:focus {
+    border-color: #3a3230; /* Более яркая граница при фокусе */
+    outline: none; /* Убираем стандартное выделение */
+}
+.contact-form h1 {
+    text-align: center;
+}   
+  
+
+footer {
+    background-color: #3a3230;
+    color: white;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: auto;
+    margin-left: 0; 
+}
+
+.footer-content {
+    display: flex;
+    justify-content:  center;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.social-icons a {
+    margin: 0 7px;
+}
+
+.social-icons img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.copyright {
+    text-align: center;
+    font-size: 12px;
+}
+
+.copyright a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    font-size: 12px;
+}
+
+.copyright a:hover {
+    text-decoration: underline;
+}
+
+.contact a {
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    margin-right: 50px;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+/* Style the burger menu icon */
+.burger-menu-icon {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+  
+  .burger-menu-icon span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    margin-bottom: 5px;
+    transition: opacity 0s ease-in-out;
+  }
+  
+  .burger-menu-icon.open span {
+    background-color: #333; /* Set the background color to a visible color */
+}
+  
+  .burger-menu-icon.open span:nth-child(1) {
+    transform: rotate(45deg) translate(0px, 10px);
+  }
+  
+  .burger-menu-icon.open span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .burger-menu-icon.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(0px, -10px);
+  }
+  
+  .nav {
+    display: none;
+  }
+  
+  .nav.show {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    border: none;
+    box-shadow: none;
+  }
+  
+  .nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+  
+  .nav li {
+    margin-bottom: 10px;
+    display: inline-block;
+    margin-right: 20px;
+  }
+  
+  .nav a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  /* Show the navigation menu on mobile when the burger menu icon is clicked */
+  @media (max-width: 768px) {
+    .nav.show {
+      display: block;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .burger-menu-icon {
+      display: block;
+    }
+    .nav {
+      display: none;
+    }
+  }
+  
+  @media (min-width: 769px) {
+    .burger-menu-icon {
+      display: none;
+    }
+    .nav {
+      display: block;
+    }
+  }
+
+/* Мобильные устройства (телефон) */
+@media (max-width: 768px) {
+    body {
+        font-size: 12px;
+    }
+    .nav {
+        flex-direction: column;
+        align-items: center;
+      }
+      .nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+      .nav ul li {
+        margin-bottom: 10px;
+      }
+    .logo img {
+        width: 100px;
+        height: 50px;
+    }
+    .studio-image {
+        height: 300px;
+        padding-top: 60px;
+    }
+
+    .about-studio p {
+        font-size: 12px;
+        padding-right: 10%;
+    }
+
+    .portfolio {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    .services-page {
+        grid-template-columns: 1fr;
+    }   
+    .services-page h1 {
+        font-size: 40px;
+        text-align: left;
+    }
+    .center-img {
+        height: 300px;
+        padding-top: 60px;
+    }
+    .pricing-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pricing-plan {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .contact-form-container {
+        padding: 20px;
+    }
+
+    .contact-form {
+        padding: 20px;
+    }
+
+    footer {
+        padding: 20px 10px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .contact a {
+        margin-right: 0; 
+        margin-bottom: 10px; 
+    }
+
+    .social-icons {
+        margin-top: 10px;
+    }
+}
+
+/* Планшеты (ширина экрана от 768px до 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    body {
+        font-size: 14px;
+    }
+    .header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 30px;
+    }
+
+    .logo img {
+        width: 180px;
+        height: 90px;
+    }
+
+    .studio-image {
+        height: 400px;
+        padding-top: 80px;
+    }
+
+    .about-studio p {
+        font-size: 13px;
+        padding-right: 20%;
+    }
+
+    .portfolio {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    .center-img {
+        height: 400px;
+        padding-top: 80px;
+    }
+    .services-page {
+        grid-template-columns: 1fr;
+    }  
+    .services-page h1 {
+        font-size: 32px;
+        text-align: left;
+    }
+
+    .pricing-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .pricing-plan {
+        width: 48%;
+    }
+
+    .contact-form-container {
+        padding: 40px;
+    }
+
+    footer {
+        padding: 30px;
+    }
+
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .social-icons {
+        margin-top: 0;
+    }
+}
+
+/* ПК (ширина экрана от 1025px до 1280px) */
+@media (min-width: 1025px) and (max-width: 1330px) {
+    body {
+        font-size: 13px;
+    }
+
+    .header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 30px;
+    }
+    nav {
+        margin-left: auto;
+      }
+
+    .logo img {
+        width: 200px;
+        height: 100px;
+    }
+
+    .studio-image {
+        height: 500px;
+        padding-top: 100px;
+    }
+
+    .about-studio p {
+        font-size: 14px;
+        padding-right: 30%;
+    }
+
+    .portfolio {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+    .center-img {
+        height: 500px;
+        padding-top: 100px;
+    }
+    .services-page {
+        grid-template-columns: 4fr;
+    }  
+    .services-page h1 {
+        font-size: 36px;
+        text-align: left;
+    }
+
+    .pricing-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .pricing-plan {
+        width: 30%;
+    }
+
+    .contact-form-container {
+        padding: 40px;
+    }
+
+    footer {
+        padding: 40px 20px;
+    }
+
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .social-icons {
+        margin-top: 0;
+    }
+}
+
+/* Большие экраны (ширина экрана больше 1280px) */
+@media (min-width: 1331px) {
+    body {
+        font-size: 13px;
+    }
+
+    .header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0px;
+    }
+    nav {
+        margin-left: auto;
+      }
+    
+    .logo img {
+        width: 200px;
+        height: 100px;
+    }
+
+    .studio-image {
+        height: 600px;
+        padding-top: 120px;
+    }
+
+    .about-studio p {
+        font-size: 16px;
+        padding-right: 40%;
+    }
+
+    .portfolio {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .center-img {
+        height: 600px;
+        padding-top: 120px;
+    }
+    .services-page {
+        grid-template-columns: 4fr;
+    }  
+    .services-page h1 {
+        font-size: 40px;
+        text-align: left;
+    }
+
+    .pricing-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .pricing-plan {
+        width: 23%;
+    }
+
+    .contact-form-container {
+        padding: 60px;
+    }
+
+    footer {
+        padding: 30px;
+    }
+
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .social-icons {
+        margin-top: 0;
+    }
+}
