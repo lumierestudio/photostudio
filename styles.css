@@ -11,7 +11,6 @@ body {
     font-size: 13px;
     margin: 0;
     padding: 0; 
-    box-sizing: border-box;
     display: flex; /* Устанавливаем flexbox */
     flex-direction: column; /* Элементы будут выстраиваться по вертикали */
     min-height: 100vh; /* Занимаем всю высоту экрана */  
@@ -21,11 +20,11 @@ body {
 
 .main-container {
     flex: 1; /* Заставляем контейнер растягиваться, чтобы футер оставался внизу */
-    overflow-x: hidden; 
+    overflow-x: hidden;
 }
 
 main {
-    margin-top: 80px;
+    padding-top: 80px;
 }
 
 header, main, footer {
@@ -77,7 +76,6 @@ nav ul li a {
 
 nav ul li a:hover {
     background-color: #eae0d5;
-    border-radius: 0px;
 }
 .cta-container {
     text-align: center; /* center the button horizontally */
@@ -105,7 +103,6 @@ nav ul li a:hover {
 
 .studio-image {
     width: 100%;
-    max-width: 1300px;
     height: 500px;
     object-fit: cover;
     margin-bottom: 20px;
@@ -150,7 +147,6 @@ nav ul li a:hover {
     padding-left: 50px; /* Отступ слева */
     padding-right: 50px;
     width: 100%; /* Ширина контейнера */
-    max-width: 100%; /* Максимальная ширина 100% от родителя */
     box-sizing: border-box; /* Включает padding в ширину */
 }
 
@@ -171,7 +167,6 @@ nav ul li a:hover {
 
 .photo-image {
     width: 100%;
-    max-width: 1300px;
     height: 500px;
     object-fit: cover;
     margin-bottom: 20px;
@@ -388,7 +383,8 @@ footer {
     position: relative;
     bottom: 0;
     width: auto;
-    margin-left: 0; 
+    margin-top: auto;
+    text-align: center;
 }
 
 .footer-content {
@@ -508,7 +504,7 @@ ul {
 
 .calendar {
     max-width: 800px; /* adjust the width to your liking */
-    margin: 40px auto; /* add space on all sides */
+    margin: 60px auto 40px; /* add space on all sides */
     padding: 10px; /* add some padding to the calendar container */
     background-color: #3a3230; /* add a background color to the calendar container */
     border: 1px solid #ddd; /* add a border to the calendar container */
@@ -516,6 +512,25 @@ ul {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* add a shadow to the calendar container */
 }
   
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px; /* Добавляем отступы */
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #f6f3ee; /* Фон заголовка */
+    position: relative; /* Убедимся, что он не перекрывает другие элементы */
+    z-index: 10; /* Если заголовок перекрывается чем-то */
+}
+
+.calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    padding: 10px 0;
+    font-weight: bold;
+    border-bottom: 2px solid #ccc; /* Разделение дней недели и заголовка */
+}
   /* Month header */
   .month {
   padding: 20px 25px;
@@ -536,6 +551,8 @@ ul {
    display: flex;
    justify-content: center;
    align-items: center;
+   width: 100%;
+   position: relative; /* Добавляем относительное позиционирование */
 
 }
   
@@ -594,8 +611,8 @@ ul {
     display: grid;
     grid-template-columns: repeat(7, 1fr); /* 7 columns for each weekday */
     gap: 5px;
-    height: 270px; /* Set fixed height for the days container */
-    overflow-y: auto;
+    height: auto; /* Автоматическая высота */
+    overflow: visible; /* Показывать все дни без прокрутки */
   }
   
   /* Days styling */
@@ -649,7 +666,7 @@ ul {
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     .burger-menu-icon {
       display: block;
     }
@@ -658,7 +675,7 @@ ul {
     }
   }
   
-  @media (min-width: 769px) {
+  @media (min-width: 1025px) {
     .burger-menu-icon {
       display: none;
     }
@@ -682,10 +699,11 @@ ul {
       }
       .nav ul li {
         margin-bottom: 10px;
-      }
+    }
+
     .logo img {
-        width: 100px;
-        height: 50px;
+        width: 150px;
+        height: 75px;
     }
     .studio-image {
         height: 300px;
@@ -730,6 +748,37 @@ ul {
         padding: 20px;
     }
 
+    .calendar {
+        width: 90%;
+        margin: 80px auto 20px; /* Добавлен отступ сверху */
+        padding: 5px;
+    }
+
+    .month ul li {
+        font-size: 16px; /* Уменьшаем размер текста */
+        padding: 0 8px;
+    }
+
+    .month .prev, 
+    .month .next {
+        font-size: 20px;
+    }
+
+    .weekdays li {
+        font-size: 12px;
+    }
+
+    .days {
+        grid-template-columns: repeat(7, minmax(30px, 1fr)); /* Делаем адаптивную сетку */
+        gap: 3px;
+    }
+
+    .days li {
+        font-size: 10px;
+        padding: 5px;
+        height: 35px;
+    }
+
     footer {
         padding: 20px 10px;
     }
@@ -760,6 +809,17 @@ ul {
         justify-content: space-between;
         padding: 30px;
     }
+    .nav {
+        flex-direction: column;
+        align-items: center;
+      }
+      .nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+      .nav ul li {
+        margin-bottom: 10px;
+    }
 
     .logo img {
         width: 180px;
@@ -788,7 +848,7 @@ ul {
         grid-template-columns: 1fr;
     }  
     .services-page h1 {
-        font-size: 32px;
+        font-size: 40px;
         text-align: left;
     }
 
@@ -805,6 +865,36 @@ ul {
         padding: 40px;
     }
 
+    .calendar {
+        max-width: 700px;
+        margin-top: 100px; /* Отступ для избежания наложения */
+        padding: 10px;
+    }
+
+    .month ul li {
+        font-size: 18px;
+        padding: 0 10px;
+    }
+
+    .month .prev, 
+    .month .next {
+        font-size: 22px;
+    }
+
+    .weekdays li {
+        font-size: 13px;
+    }
+
+    .days {
+        grid-template-columns: repeat(7, minmax(35px, 1fr));
+        gap: 4px;
+    }
+
+    .days li {
+        font-size: 12px;
+        padding: 8px;
+        height: 38px;
+    }
     footer {
         padding: 30px;
     }
@@ -845,7 +935,7 @@ ul {
     }
 
     .about-studio p {
-        font-size: 14px;
+        font-size: 13px;
         padding-right: 30%;
     }
 
@@ -861,7 +951,7 @@ ul {
         grid-template-columns: 4fr;
     }  
     .services-page h1 {
-        font-size: 36px;
+        font-size: 45px;
         text-align: left;
     }
 
@@ -876,6 +966,11 @@ ul {
 
     .contact-form-container {
         padding: 40px;
+    }
+    .calendar {
+        max-width: 800px;
+        margin-top: 120px;
+        padding: 10px;
     }
 
     footer {
@@ -918,7 +1013,7 @@ ul {
     }
 
     .about-studio p {
-        font-size: 16px;
+        font-size: 13px;
         padding-right: 40%;
     }
 
@@ -935,7 +1030,7 @@ ul {
         grid-template-columns: 4fr;
     }  
     .services-page h1 {
-        font-size: 40px;
+        font-size: 45px;
         text-align: left;
     }
 
@@ -950,6 +1045,10 @@ ul {
 
     .contact-form-container {
         padding: 60px;
+    }
+    .calendar {
+        max-width: 800px;
+        margin-top: 120px;
     }
 
     footer {
