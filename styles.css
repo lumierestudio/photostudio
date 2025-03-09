@@ -501,7 +501,9 @@ footer {
     color: #333;
     text-decoration: none;
   }
-  
+
+
+
   /* Show the navigation menu on mobile when the burger menu icon is clicked */
   @media (max-width: 768px) {
     .nav.show {
